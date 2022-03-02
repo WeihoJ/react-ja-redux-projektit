@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Button.css';
 
-class Button extends Component {
-  render() {
-    return(
-        <div style={ { backgroundColor: this.props.active ? this.props.activeColor : this.props.buttonColor }} className={"button" + (this.props.active ? " active" : "") }  onClick={ this.props.clickHandler }>
-          { this.props.label }</div>
-    );
-  }
+const Button = (props) => {
+  return (
+    <div style={{ backgroundColor: props.active ? props.activeColor : props.buttonColor }} className={"button" + (props.active ? " active" : "")} onClick={props.clickHandler}>
+      {props.label}</div>
+  );
 }
 
 Button.defaultProps = {
