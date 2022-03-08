@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AnecdoteView from "AnecdoteView.js";
 
 let index = 0;
 
@@ -34,17 +35,33 @@ const Anecdote = () => {
     //     setActiveAnecdote(anecdotes[index])
     // }
 
+    // anecdotes.forEach((anecdote) => {
+    //     const votePlace = document.getElementById("anecdoteVotes");
+    //     // console.log(anecdote[0])
+    //     // div.innerText = anecdote[0]
+    //     // votePlace.appendChild(div)
+    //     const newDiv = document.createElement("div");
+    //     const newContent = document.createTextNode(anecdote[0]);
+    //     const newContent2 = document.createTextNode(anecdote[1]);
+    //     newDiv.appendChild(newContent);
+    //     newDiv.appendChild(newContent2);
+    //     document.body.appendChild(newDiv);
+    // });
+
     return (
         <div>
             <div className="anecdote">
                 <p>{activeAnecdote}</p>
             </div>
-            <div className="anectodeBtn">
+            <div className="anecdoteBtn">
                 {/* <button onClick={nextAnecdote}>Seuraava anekdootti</button> */}
                 <button onClick={pickAnecdote}>Satunnainen anekdootti</button>
             </div>
             <div className="voteBtn">
                 <button onClick={voteCurrent}>Äänestä tätä anekdoottia</button>
+            </div>
+            <div className="anecdoteVotes" id="anecdoteVotes">
+                <AnecdoteView anecdotes={anecdotes}/>
             </div>
         </div>
     )
