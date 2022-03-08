@@ -16,25 +16,27 @@ const Anecdote = () => {
 
     const [activeAnecdote, setActiveAnecdote] = useState(anecdotes[index]);
 
-    // function pickAnecdote() {
-    //     setActiveAnecdote(anecdotes[Math.floor(Math.random() * anecdotes.length)])
-    //     console.log(pickAnecdote())
-    // }
-
-    function nextAnecdote() {
-        if (index >= anecdotes.length - 1) {
-            index = 0;
-        } else {
-            index = index + 1;
-        }
+    function pickAnecdote() {
+        index = Math.floor(Math.random() * anecdotes.length)
+        console.log(index)
         setActiveAnecdote(anecdotes[index])
     }
+
+    // function nextAnecdote() {
+    //     if (index >= anecdotes.length - 1) {
+    //         index = 0;
+    //     } else {
+    //         index = index + 1;
+    //     }
+    //     setActiveAnecdote(anecdotes[index])
+    // }
 
     return (
         <div>
             <p>{activeAnecdote}</p>
             <div>
-                <button onClick={nextAnecdote}>Seuraava anekdootti</button>
+                {/* <button onClick={nextAnecdote}>Seuraava anekdootti</button> */}
+                <button onClick={pickAnecdote}>Satunnainen anekdootti</button>
             </div>
         </div>
     )
