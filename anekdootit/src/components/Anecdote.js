@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
+let index = 0;
+
 const Anecdote = () => {
-    // const [activeAnecdote, setActiveAnecdote] = useState("");
 
     const anecdotes = [
         'If it hurts, do it more often.',
@@ -13,14 +14,28 @@ const Anecdote = () => {
         'Programming without an extremely heavy use of console.log is same as if a doctor would refuse to use x-rays or blood tests when diagnosing patients.'
     ]
 
+    const [activeAnecdote, setActiveAnecdote] = useState(anecdotes[index]);
+
     // function pickAnecdote() {
     //     setActiveAnecdote(anecdotes[Math.floor(Math.random() * anecdotes.length)])
     //     console.log(pickAnecdote())
     // }
 
+    function nextAnecdote() {
+        if (index >= anecdotes.length - 1) {
+            index = 0;
+        } else {
+            index = index + 1;
+        }
+        setActiveAnecdote(anecdotes[index])
+    }
+
     return (
         <div>
-            <p>{anecdotes[0]}</p>
+            <p>{activeAnecdote}</p>
+            <div>
+                <button onClick={nextAnecdote}>Seuraava anekdootti</button>
+            </div>
         </div>
     )
 };
