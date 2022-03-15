@@ -5,7 +5,7 @@ import Anecdote from "./components/Anecdote";
 const App = () => {
 
   return (
-    <div>
+    <div className="App">
       <Anecdote />
     </div>
   );
