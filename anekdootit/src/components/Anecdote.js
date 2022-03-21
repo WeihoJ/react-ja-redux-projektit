@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 let index = 0;
 
 const anecdotes = [
