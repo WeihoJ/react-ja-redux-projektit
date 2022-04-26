@@ -51,6 +51,7 @@ body {
 } */
 
 button {
+    cursor: pointer;
     background-color: #983430;
     color: #F2E9CD;
     border: none;
