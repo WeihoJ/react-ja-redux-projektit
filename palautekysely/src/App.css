@@ -1,3 +1,10 @@
+button {
+  width: 100px;
+  height: 40px;
+  margin: 10px;
+  font-weight: bold;
+}
+
 .App {
   text-align: center;
 }
